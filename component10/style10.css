@@ -1,0 +1,348 @@
+/*Style css for GroceryBudApp*/
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: transparent;
+}
+
+:root {
+  --bgc-body: #12343b; /*#7A5B3D*/
+  --main-color: rgb(241, 174, 111);
+  --color: #889da3;
+  --edit: #dad149;
+  --del: #cc6e5f;
+  --brd-clr: #375561;
+  --edit-bdg: #613211;
+  --add-bdg: #0b686f;
+}
+body {
+  background: no-repeat center/cover
+    linear-gradient(to bottom right, var(--main-color), #5a3f25);
+  height: auto;
+  width: 100%vw;
+}
+
+main.app-wrapper {
+  max-width: 60%;
+  height: auto;
+  background: linear-gradient(to bottom right, #34585f, #12343b, #000);
+
+  overflow: hidden;
+  margin: 2rem auto;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  box-shadow: 10px -10px 20px rgba(00, 00, 00, 0.26);
+  padding: 2rem;
+}
+
+main.app-wrapper .header-container {
+  color: white;
+  text-align: center;
+}
+.header-container .alert-msg {
+  font-size: 1.5rem;
+}
+.header-container .alert-msg {
+  position: relative;
+  top: -20px;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease-in-out;
+}
+
+.header-container .alert-msg.show {
+  transform: translateY(0%);
+  transition: transform 0.8s ease-in-out;
+  color: white;
+}
+
+.header-container .alert-msg {
+  height: 1.5rem;
+  width: 20rem;
+  margin: auto;
+  text-align: center;
+}
+
+.header-container h2 {
+  margin-bottom: 2rem;
+}
+
+.form-container .form-inside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  height: 3.5rem;
+  margin-bottom: 1rem;
+}
+.form-inside .form-input {
+  padding-left: 0.5rem;
+  border-radius: 0.4rem;
+  color: white;
+  margin-right: 0.8rem;
+  outline: none;
+  font-size: 1.1rem;
+  border: 1px var(--main-color) solid;
+  background-color: #000;
+  width: 78%;
+  height: 3rem;
+  padding: 1rem;
+}
+
+.form-inside .form-input:focus,
+btn:focus {
+  outline: auto;
+}
+
+.form-inside .btn-submit {
+  background-color: var(--main-color);
+  font-size: 1.4rem;
+  border-radius: 0.6rem;
+  height: 50px;
+  width: 80px;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+.form-inside .btn-submit:hover {
+  background-color: rgb(241, 174, 111, 0.1);
+  color: rgb(241, 174, 111, 1);
+}
+
+.section-list {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.section-list .item {
+  width: 100%;
+  height: 4rem;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--color);
+}
+
+.item .item-name {
+  margin-left: -0.5rem;
+  border-radius: 0.4em;
+  color: white;
+  outline: none;
+  font-size: 1.3rem;
+
+  height: 2.5rem;
+  width: 80%;
+  display: flex;
+  justify-content: start;
+  padding-left: 1rem;
+  align-items: center;
+}
+
+.item .button-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 0.5rem;
+}
+
+.item .button-container .btn {
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.item .button-container .i-edit {
+  font-size: 1.5rem;
+  color: var(--edit);
+}
+.item .button-container .i-delete {
+  font-size: 1.5rem;
+  color: var(--del);
+  color: rgb(28, 219, 28);
+}
+
+.item .button-container .btn {
+  margin-left: 0.7rem;
+}
+.item .button-container .btn:hover {
+  transform: scale(1.1);
+}
+.clear-container {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+}
+.clear-btn {
+  background-color: rgba(28, 219, 28, 0.8);
+  font-size: 1.25rem;
+  border-radius: 0.6rem;
+  /* height: 50px; */
+  /* width: 80px; */
+  outline: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  /* margin-top:1rem; */
+}
+
+.clear-btn:hover {
+  background-color: rgba(28, 219, 28, 0.1);
+  color: rgba(28, 219, 28, 1);
+}
+
+@media screen and (max-width: 768px) {
+  * :not(h2) {
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+  .alert-msg {
+    display: none;
+  }
+  .form-inside {
+    margin: 0;
+  }
+  .section-list {
+    margin: 0;
+  }
+  .form-inside .form-input {
+    font-size: 0.7rem;
+    height: 1.5rem;
+    padding: 0;
+  }
+  .form-inside .btn-submit {
+    height: 22px;
+    width: auto;
+    height: 32px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    padding: 0.5rem;
+  }
+
+  .section-list .item {
+    height: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-list .item-name {
+    text-align: justify;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+
+    line-height: 1.2;
+    height: auto;
+  }
+
+  .item .button-container .i-delete,
+  .item .button-container .i-edit {
+    font-size: 0.8rem;
+  }
+
+  .item .button-container .btn {
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  .clear-container {
+    height: 2rem;
+  }
+  .clear-btn {
+    height: auto;
+    width: auto;
+    font-size: 0.6rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  * :not(h2) {
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .form-container .form-inside {
+    flex-direction: column;
+    /* margin:1rem; */
+  }
+  .form-inside .btn-submit {
+    margin-top: 0.5rem;
+    height: 32px;
+    width: 100%;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: black;
+    padding: 0.5rem;
+  }
+
+  .form-container {
+    width: 100%;
+    height: auto;
+  }
+  .form-container .form-input {
+    width: 100%;
+    font-size: 0.7rem;
+  }
+  .section-list .item {
+    height: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-list .item-name {
+    text-align: justify;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+
+    line-height: 1.2;
+    height: auto;
+  }
+
+  .item .button-container .i-delete,
+  .item .button-container .i-edit {
+    font-size: 0.8rem;
+  }
+
+  .item .button-container .btn {
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  .clear-container {
+    height: 2rem;
+  }
+  .clear-btn {
+    height: auto;
+    width: auto;
+    font-size: 0.6rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    margin: 0;
+  }
+}
